@@ -20,5 +20,12 @@ def encode_data():
     return
 
 
-def explore_dataset():
-    return
+def explore_dataset(df: pd.DataFrame):
+    print(df.head())
+    print(df.info())
+    print(df.describe())
+    print(df.isnull().sum())
+    print(df.select_dtypes(include=["object"]).nunique())
+
+
+explore_dataset(load_dataset())
